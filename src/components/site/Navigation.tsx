@@ -11,7 +11,7 @@ type NavigationProps = {
 
 export const Navigation = ({ user }: NavigationProps) => {
   return (
-    <div className='p-4 flex items-center justify-between relative'>
+    <div className='p-4 flex items-center justify-between relative z-10'>
       <aside className='flex items-center gap-2'>
         <Image
           src='/assets/plura-logo.svg'
