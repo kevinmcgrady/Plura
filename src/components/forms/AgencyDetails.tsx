@@ -98,7 +98,7 @@ export const AgencyDetails = ({ data }: AgencyDetailsProps) => {
     if (data) {
       form.reset(data);
     }
-  }, [data]);
+  }, [form, data]);
 
   const handleSubmit = async (values: z.infer<typeof FormSchema>) => {
     try {

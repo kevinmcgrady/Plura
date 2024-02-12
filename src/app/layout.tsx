@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import type React from 'react';
 
+import { Toaster } from '@/components/ui/toaster';
+import ModalProvider from '@/providers/model.provider';
+
 import { ThemeProvider } from '../providers/theme.provider';
 
 const font = DM_Sans({ subsets: ['latin'] });
@@ -27,7 +30,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <ModalProvider>
+            {children}
+            <Toaster />
+          </ModalProvider>
         </ThemeProvider>
       </body>
     </html>
