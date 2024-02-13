@@ -36,7 +36,7 @@ export const Navigation = ({ user }: NavigationProps) => {
         >
           Login
         </Link>
-        <UserButton />
+        <UserButton afterSignOutUrl='/' />
         <ModeToggle />
       </aside>
     </div>

@@ -2,6 +2,8 @@ import { currentUser } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 import type React from 'react';
 
+import { BlurPage } from '@/components/global/BlurPage';
+import { InfoBar } from '@/components/global/Infobar';
 import { Sidebar } from '@/components/sidebar/Sidebar';
 import {
   getNotificationsAndUser,
@@ -37,17 +39,17 @@ const AgencyIdLayout = async ({ children, params }: AgencyIdLayoutProps) => {
     return <UnauthorizedPage />;
   }
 
-  let allNotifications = [];
+  const notifications = (await getNotificationsAndUser(agencyId)) || [];
 
-  const notifications = await getNotificationsAndUser(agencyId);
-
-  if (notifications) {
-    allNotifications = notifications;
-  }
   return (
     <div className='h-screen overflow-hidden'>
       <Sidebar id={params.agencyId} type='agency' />
-      <div className='md:pl-[400px]'>{children}</div>
+      <div className='md:pl-[400px]'>
+        <InfoBar notifications={notifications} />
+        <div className='relative'>
+          <BlurPage>{children}</BlurPage>
+        </div>
+      </div>
     </div>
   );
 };
