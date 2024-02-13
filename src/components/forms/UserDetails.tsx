@@ -126,7 +126,7 @@ export const UserDetails = ({
     if (userData) {
       form.reset(userData);
     }
-  }, [userData, data]);
+  }, [userData, data, form]);
 
   const onChangePermission = async (
     subAccountId: string,
