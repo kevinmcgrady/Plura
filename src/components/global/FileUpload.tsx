@@ -28,7 +28,7 @@ export const FileUpload = ({
             <Image
               src={value}
               alt='uploaded image'
-              className='object-contain'
+              className='object-contain rounded-md'
               fill
             />
           </div>
@@ -38,7 +38,7 @@ export const FileUpload = ({
             <a
               href={value}
               target='_blank'
-              rel="noopener_ noreferrer"
+              rel='noopener_ noreferrer'
               className='ml-2 text-sm text-indigo-500 dark:text-indigo-400 hover:underline'
             >
               View PDF

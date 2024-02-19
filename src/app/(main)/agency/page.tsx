@@ -15,7 +15,6 @@ type AgencyPageProps = {
 
 const AgencyPage = async ({ searchParams }: AgencyPageProps) => {
   const agencyId = await verifyAndAcceptInvitation();
-  console.log(agencyId);
 
   const user = await getAuthUserDetails();
 
